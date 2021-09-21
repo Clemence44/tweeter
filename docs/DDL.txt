@@ -1,0 +1,26 @@
+users
+    id int NN auto-increment PK non signé (pas de négatif)
+    email varchar 100 NN UK
+    username varchar 30 NN UK
+    password varchar 255 NN
+    bio text
+    date_created datetime NN
+    date_updated datetime
+
+
+tweets
+    id int NN auto-increment PK non signé
+    message varchar 255 NN
+    user_id int NN
+    date_created datetime NN
+    likes_quantity DF 0
+
+
+FK  entre user_id et id de users
+
+    /* plus de performance en BDD on ne crée pas
+        likes
+            user_id
+            tweet_id
+            date_like
+    */
